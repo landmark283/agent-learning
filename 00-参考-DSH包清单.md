@@ -1,0 +1,202 @@
+﻿# DSH 包清单参考（自动生成）
+
+> 来源：`node_modules/@deepseek-ai` 下各包 package.json 的 description 字段。
+> 用途：阶段 0 建立生态地图用；建议你按"引导/循环/工具/上下文/沙箱/编排/UI/存储"自行重排分类。
+
+- `cordis`: Meta-Framework for Modern JavaScript Applications
+- `cordis-plugin-group`: Nested plugin group for cordis
+- `cordis-plugin-hmr`: (读取失败)
+- `cordis-plugin-include`: Include files in cordis configurations
+- `cordis-plugin-loader`: Plugin loader for cordis
+- `cordis-plugin-timer`: Timer service for cordis
+- `cosmokit`: A collection of common utilities
+- `dsh-agent`: Agent interface, registry, initiator scope, and event vocabulary for the DeepSeek Harness
+- `dsh-agent-default-model`: Default model selection shared by Agent entry points
+- `dsh-agent-instructions`: Workspace context loader for AGENTS.md/CLAUDE.md instruction files
+- `dsh-agent-loop`: The concrete agent loop plugin for the DeepSeek Harness
+- `dsh-agent-presets`: Per-session agent composition from preset cordis.yml files for the DeepSeek Harness
+- `dsh-agent-tool-presentation`: Agent-plane presentation selector: composes one agent's tools as Code Mode, native, or both
+- `dsh-anonymous-user-id`: Shared anonymous user identity for DeepSeek Harness telemetry and feedback correlation
+- `dsh-api-gateway`: Typert Remote Host dispatcher and Client API endpoint
+- `dsh-api-remotes`: Remote BFF assembly and Host Agent/Session lookup policy
+- `dsh-app-boot`: Shared boot glue for the app bins: .env loading, fail-loud Loader guards, snapshot-aware config resolution, and the Loader boot sequence
+- `dsh-atomic-write`: Zero-dependency atomic file replacement: exclusive-create random-suffix temp + rename carrying the caller-stated permissions (writeFileAtomic)
+- `dsh-attachment`: Durable immutable attachment storage seam for the DeepSeek Harness
+- `dsh-attachment-local`: Private content-addressed DSH_HOME attachment storage
+- `dsh-authorization`: Authorization seam (ctx.authorization): plugin-owned flows that obtain a credential through a conversation with the human
+- `dsh-base`: The shared dsh core as a profile bundle: every profile's first patch layer, inserting the base plugin rows over the empty profile root
+- `dsh-bash-local`: Local-subprocess implementation of the DeepSeek Harness bash executor seam
+- `dsh-bash-sandbox`: Sandbox-consuming implementation of the DeepSeek Harness bash executor seam (confines every command via ctx.sandbox, reports denial/enforcement result facts)
+- `dsh-brand`: Type-only Branded<B> nominal-typing primitive for the DeepSeek Harness
+- `dsh-client-connection`: Wire consumer layer: HTTP-up/WebSocket-down client, ConnectionController dual streams with reconnect, and fixture api
+- `dsh-client-hmr`: Dev-only hot-reload driver for script-loaded client entries: SSE rebuilt frames 鈫?invalidate/prefetch 鈫?fiber swap through the vendored Loader entry
+- `dsh-client-locale`: Locale plugin: Host-backed zh/en preference, browser-derived fallback, locale snapshots, and typed namespace dictionaries
+- `dsh-client-modules`: Client module system, dual-face: node half composes the __DSH_BOOT__ entry graph (incremental dsh.client scan, bundle route, index tap, webPlugins service); browser half is the lazy-CJS module table the vendored cordis Loader consumes as its internal seam
+- `dsh-client-runtime`: Client core services: SlotRegistry, SessionRuntime (scope tree + object layer)
+- `dsh-client-ui-agent-preset`: Agent-preset surfaces: the default for later sessions, this session's seat, and the composition editor
+- `dsh-client-ui-attachment`: Dynamic attachment presentation plugin for conversation input and message-image slots
+- `dsh-client-ui-brand-official`: Official DeepSeek Harness brand occupants for the Web client's sidebar and conversation Hero slots
+- `dsh-client-ui-commands`: Client command surface: global directory cache, '/' source, three command UI kinds, popupSelect registry
+- `dsh-client-ui-conversation`: Conversation domain: skeleton, ordered chat flow, composer with the Host-backed busy-Enter preference, and details host
+- `dsh-client-ui-cordis`: Cordis dynamic-plugin definition card: the keyed cordis_define tool row with its run/stop switch
+- `dsh-client-ui-deliverables`: Produced-files turn tail and clickable final-response file references for Web
+- `dsh-client-ui-directory-picker-browse`: In-app directory browsing surface: the workspace directory-flow owner rendering the host's listing and creation primitives
+- `dsh-client-ui-directory-picker-native`: Native directory-picker surface: the renderless workspace directory-flow occupant driving the host's OS chooser
+- `dsh-client-ui-goal`: Session goal surface: GoalBar docked above the composer, read from the goal session projection
+- `dsh-client-ui-input-trigger`: Input trigger pipeline: '/' and '@' detection, candidate menu, pick routing to registered sources
+- `dsh-client-ui-jobs`: Session-header background-job list: live registry state mirrored from session/jobs frames
+- `dsh-client-ui-layout`: Shell plugin: three-column AppFrame with drag handles, ctx.layout viewing-state service (navigation + panels)
+- `dsh-client-ui-message-feedback`: Per-message feedback controls contributed to the assistant-message action strip, backed by the messageFeedback Host Remote
+- `dsh-client-ui-model-selection`: Model selection: the /model popupSelect over session.models / session.selectModel
+- `dsh-client-ui-permission-presets`: Permission surfaces: a new-session default in General settings and a current-session /permission popup over the permissions projection
+- `dsh-client-ui-plan`: Plan-mode composer control: the conversation.input.plan seat over the plan projection and the /plan command channel
+- `dsh-client-ui-reference`: Unified Web @file and @session reference source
+- `dsh-client-ui-renderer`: Browser UI renderer: React slot bindings, ctx.uiRenderer, and the assembled application root
+- `dsh-client-ui-settings`: Settings domain base plugin: the settings-namespace scope service and the canonical settings slot-type contract
+- `dsh-client-ui-settings-general`: Settings ownerless-copy and product onboarding plugin: the General section, shell trigger/header chrome content, settings dictionaries, and the versioned welcome notice
+- `dsh-client-ui-settings-models`: Models settings and shared product-onboarding dialogs over existing settings and credential joins
+- `dsh-client-ui-settings-plugin-inventory`: Read-only Cordis Loader inventory tab in Web Plugins settings
+- `dsh-client-ui-settings-plugins`: Plugins settings section with feature-owned tabs and configurable host-plane plugin cards
+- `dsh-client-ui-sidebar`: Sidebar plugin: session multi-level tree, search, grouping, state dots
+- `dsh-client-ui-skill`: Web skill references and the dedicated skill tool row
+- `dsh-client-ui-subagent`: Subagent conversation catalog, continuation routing UI, and '@' reference source
+- `dsh-client-ui-theme`: Theme plugin: Host bootstrap for the pre-plugin palette; DOM-free ThemeRuntime for light/dark/system state; --dsw-* token styles and Appearance settings row
+- `dsh-client-ui-tool`: Client Tool call-tree renderer and keyed per-tool presentation slot
+- `dsh-client-ui-trajectory`: Trajectory event ledger with an interactive timing overview: pure-consumer plugin registering into the conversation ViewMap (no service)
+- `dsh-client-ui-user-questions`: Web ask_user_question feature: host tool mount plus composer-takeover question UI
+- `dsh-client-ui-workflow-run`: Durable workflow-run Conversation Node and nested member disclosure for dsh web
+- `dsh-client-ui-workspace`: Workspace picker plugin: one WorkspacePicker registered into the sidebar and empty-state workspace slots
+- `dsh-cmdline`: Immutable command-line handoff from a dsh launcher to any app plugin that injects cmdlineArgs
+- `dsh-code-runtime`: Abstract code-execution seam (ctx.codeRuntime) for the DeepSeek Harness
+- `dsh-code-runtime-worker-thread`: Worker-thread implementation of the DeepSeek Harness code-execution seam
+- `dsh-command-compact`: Human-facing slash command for explicit session compaction
+- `dsh-command-feedback`: Log-only session feedback producer and human-facing slash command
+- `dsh-command-goal`: Human-facing slash command for persisted same-session goals
+- `dsh-commands`: Plugin-owned human command registry for DeepSeek Harness UIs
+- `dsh-compaction`: Abstract compaction service seam (ctx.compaction) for the DeepSeek Harness
+- `dsh-compaction-basic`: Token-meter-driven compaction policy and LLM summarization backend for the DeepSeek Harness
+- `dsh-compaction-tool-result-pruner`: Replay-safe model-free head/middle/tail pruning for tool-result surface nodes
+- `dsh-cordis-client-runner`: Browser half of dynamic dual-half plugin packages: event subscription, closure evaluation, guard facade, and loader entries
+- `dsh-cordis-host-runner`: Dynamic package definition registry, host-half sandbox lifecycle, and invoke handler table for model-mounted dual-half packages
+- `dsh-credentials`: Abstract credential seam (ctx.credentials): settings carry references to secrets, providers own the values
+- `dsh-credentials-local`: File-backed credentials provider ($DSH_HOME/.env under the live process environment) for the DeepSeek Harness
+- `dsh-file-reference`: File-reference discovery contract and shared @file grammar
+- `dsh-file-reference-local`: Local-filesystem ctx.fileReferences provider with bounded fuzzy indexes
+- `dsh-fs`: Abstract filesystem capability seam (ctx.fs) for the DeepSeek Harness 鈥?vocabulary types, the FileSystem service (text IO + optional version-guarded atomic mutations), and the fs/* policy event vocabulary
+- `dsh-fs-local`: Local-filesystem implementation of the DeepSeek Harness filesystem seam (ctx.fs)
+- `dsh-fs-observation-policy`: File-context policy plugin for the DeepSeek Harness 鈥?observed-state, read-before-edit, and version-guarded write/edit added over the ctx.fs provider seam through the fs/* event gate (no service API)
+- `dsh-fs-sandbox`: Sandbox-enforcing implementation of the DeepSeek Harness filesystem seam: fences write/edit by the per-call sandbox mode (read-only denies mutation, workspace-write contains it to the workspace + temp roots) while reads pass through
+- `dsh-goal`: Event-sourced same-session goal state and lifecycle service for the DeepSeek Harness
+- `dsh-goal-round-driver`: Race-fenced same-session goal-round driver
+- `dsh-headless`: The dsh one-shot bundle: a direct core Agent/Session runner over dsh-base with no Host, HTTP, or browser layer
+- `dsh-home-paths`: Shared filesystem path helpers for the DeepSeek Harness
+- `dsh-host-apiproxy`: API gateway: the ApiProxy contract (api/), the fetch carrier pair (fetch/), and the host-side gateway plugin providing ctx.apiProxy
+- `dsh-host-directory-picker`: Abstract workspace-directory picking seam (ctx.directoryPicker) for the DeepSeek Harness web GUI host
+- `dsh-host-directory-picker-auto`: Adaptive chooser of the directory-picker seam: resolves the host situation at boot and mounts the native or browse backend for the DeepSeek Harness web GUI host
+- `dsh-host-directory-picker-browse`: In-app browsing backend of the directory-picker seam (listing/creation primitives over the host filesystem)
+- `dsh-host-directory-picker-native`: Native-OS-chooser backend of the directory-picker seam for the DeepSeek Harness web GUI host
+- `dsh-host-frontend-static`: SPA dist server for the Web shell: owns the webserver fallback seat, serving explicit index entries and static assets with traversal rejection and 404 misses
+- `dsh-host-plugin-inventory`: Read-only Remote projection of current Cordis Loader plugin state
+- `dsh-host-webserver`: Web route-registration plugin: HTTP and upgrade routes, index transform taps, and static dist fallback; knows no harness concepts
+- `dsh-invariants`: Registry service for package-owned DeepSeek Harness runtime invariants
+- `dsh-jobs`: Background job registry (ctx.jobs) for the DeepSeek Harness 鈥?shared ids, owner isolation, polling, cancellation, and completion listeners for long-running tool work
+- `dsh-jobs-local`: Process-local implementation of the DeepSeek Harness background job registry seam
+- `dsh-launch-environment`: Immutable DeepSeek Harness launch environment that records which layer supplied each value
+- `dsh-llm`: Provider-neutral LLM service interface for the DeepSeek Harness
+- `dsh-llm-deepseek`: DeepSeek chat-completions adapter for the DeepSeek Harness LLM seam
+- `dsh-llm-pi-ai`: pi-ai-backed DeepSeek adapter for the DeepSeek Harness LLM seam (design-verification twin of dsh-llm-deepseek)
+- `dsh-llm-retry`: Provider-routed LLM request retry policy for the DeepSeek Harness
+- `dsh-mcp-client`: MCP client bridge: connects to MCP servers and registers their tools on ctx.tools
+- `dsh-message-feedback`: Lifecycle-bound per-message rating and note sidecar for the DeepSeek Harness
+- `dsh-native-command`: Zero-dependency no-shell execFile runner for host-native OS integrations: utf8 stdio capture, abort propagation, Windows hide
+- `dsh-output-retention`: Zero-dependency bounded-retention primitive: ItemRetainer/TextRetainer + neutral notice helpers (what did we keep, what did we omit)
+- `dsh-permission-presets`: User-facing permission presets (ctx.permissionPresets) for the DeepSeek Harness: one product-level Permissions select bundling the sandbox-mode and approval-policy knobs, written through to their own session events
+- `dsh-persona`: Composition-authored deployment persona section for the DeepSeek Harness
+- `dsh-plan-mode`: Logged per-agent plan mode with deployment guidance, a direct slash command, and a user-reviewed exit
+- `dsh-pwsh-local`: Local PowerShell implementation of the DeepSeek Harness bash executor seam
+- `dsh-pwsh-sandbox`: Sandbox-consuming implementation of the DeepSeek Harness PowerShell executor seam (confines every command via ctx.sandbox, reports denial/enforcement result facts)
+- `dsh-repeat-tool-reminder`: Repeat-tool-call guard plugin: advisory reminders when an agent loops on identical tool calls
+- `dsh-sandbox`: Abstract process-sandbox seam (ctx.sandbox) for the DeepSeek Harness: same-world confinement vocabulary and the SandboxProvider contract
+- `dsh-sandbox-local`: Local process-sandbox backends for the DeepSeek Harness sandbox seam: bwrap, the npm-distributed landlock-run launcher, macOS Seatbelt, or the Windows ACL restricted-token runner 鈥?functionally probed, fail-closed
+- `dsh-sandbox-policy`: Per-call sandbox policy resolver and current model context: deployment fallbacks plus each session's mode and workspace root, shared by every enforcing capability family
+- `dsh-sandbox-windows-acl`: Windows ACL write-restriction sandbox backend (restricted-token spawn with capability-SID write allowlist) for the DeepSeek Harness sandbox seam
+- `dsh-schedule`: Agent-scoped durable after, at, and fixed-rate reminders over the session event log
+- `dsh-scope`: Scoped-context registration primitive (scope tags, scope-filtered event dispatch) for the DeepSeek Harness
+- `dsh-session`: Event-sourced session store for the DeepSeek Harness
+- `dsh-session-checkpoint-policy`: Semantic session durability checkpoints before model requests and tool side effects
+- `dsh-session-log-export`: Web Session-log export command and shared download dialog
+- `dsh-session-persistence`: Abstract durable session persistence seam (ctx.sessionPersistence) for the DeepSeek Harness
+- `dsh-session-persistence-jsonl`: JSONL durable session persistence backend for the DeepSeek Harness
+- `dsh-session-projection`: Session-projection seam: the merge-extensible projection type table, the provider contract, and the ctx.sessionProjections registry serving whole current values of log-derived per-session state
+- `dsh-session-projection-cache`: Persisted projection cache (ctx.sessionProjectionCache): durable per-session projection checkpoints over the domain data form, throttled write-behind, and the cold-read ladder (cache row + persistence tail replay)
+- `dsh-session-query`: Combined session query service contract with concrete reads, traces, and filters
+- `dsh-session-query-sqlite`: Concrete ctx.sessionQuery backend with SQLite FTS5 search
+- `dsh-session-reference`: Cross-session snapshot references and durable untrusted model context (ctx.sessionReferenceResolver)
+- `dsh-session-stats`: Whole-log conversation counts and wall times projection (sessionStats) for the DeepSeek Harness
+- `dsh-session-telemetry`: SessionTelemetryBackend seam for the DeepSeek Harness: session-event capture, projection, redaction, and handoff to a reporting backend
+- `dsh-session-telemetry-otel`: OpenTelemetry backend for the DeepSeek Harness telemetry seam: hands captured session records to the OTel JS SDK's log pipeline
+- `dsh-session-title`: Log-backed session title service and provider registry for the DeepSeek Harness
+- `dsh-session-title-first-prompt-llm`: First-message LLM provider plugin for DeepSeek Harness session titles
+- `dsh-session-title-llm`: Shared LLM generation policy for DeepSeek Harness session-title providers
+- `dsh-settings`: Abstract user-settings seam (ctx.settings) for the DeepSeek Harness
+- `dsh-settings-file`: File-backed settings provider (settings.yaml) for the DeepSeek Harness
+- `dsh-shell`: Abstract bash executor seam (ctx.shell) for the DeepSeek Harness
+- `dsh-shell-env`: Tool-independent managed DSH_* shell environment registry
+- `dsh-skill`: Agent skill provider registry for the DeepSeek Harness
+- `dsh-skill-badge`: Bundled dsh badge skill provider for DeepSeek Harness
+- `dsh-skill-filesystem`: Local filesystem skill provider for the DeepSeek Harness
+- `dsh-spill`: Abstract spill storage seam (ctx.spillStore) for the DeepSeek Harness 鈥?save oversized tool text and return a retrieval locator
+- `dsh-spill-local`: Local-filesystem implementation of the DeepSeek Harness spill storage seam (private session-scoped files)
+- `dsh-spill-policy`: Tool-result spill policy for the DeepSeek Harness 鈥?replaces oversized plain-text tool results with a retained preview plus a spill-file path (no service API)
+- `dsh-storage`: Storage hub (ctx.storage): named backend registry plus mounted data-form facilities for the DeepSeek Harness
+- `dsh-storage-domain`: Domain data form (ctx.storage.domain): schema-validated, event-emitting KV domains over storage backends for the DeepSeek Harness
+- `dsh-storage-json`: JSON file KV storage backend for the DeepSeek Harness storage hub
+- `dsh-subagent`: Abstract subagent seam (ctx.subagents): named-provider registry for delegating to child agents
+- `dsh-subagent-fork-in-process`: In-process fork subagent backend: runs a child agent seeded with a prefix of the parent's log
+- `dsh-subagent-in-process-driver`: Shared in-process subagent run driver: drives a child agent on ctx.agents (used by the spawn and fork backends)
+- `dsh-subagent-spawn-in-process`: In-process spawn subagent backend: runs a fresh child agent on ctx.agents
+- `dsh-subprocess`: Subprocess seam (ctx.subprocess) for the DeepSeek Harness 鈥?managed process groups, bounded spill-backed output, and escalated kills behind one abstract service
+- `dsh-subprocess-local`: Local-subprocess implementation of the DeepSeek Harness subprocess seam
+- `dsh-system-prompt`: System prompt assembly registry for the DeepSeek Harness
+- `dsh-terminal`: Persistent PTY session seam for the DeepSeek Harness 鈥?owner-scoped ids, backend registry, interactive sends, reads, signals, and awaited cleanup
+- `dsh-terminal-bash`: Persistent shell PTY backend over the DeepSeek Harness subprocess terminal primitive
+- `dsh-time-context`: Opt-in durable per-step context with the current time and elapsed time
+- `dsh-timeout`: Zero-dependency timeout/deadline primitive: clampTimeout, deadline, timeoutOf, TimeoutReason (timing + classification only, no termination)
+- `dsh-tmux-context`: Opt-in durable per-step context with this agent's tmux pane and window location
+- `dsh-token-meter`: Replay-aware token measurement service (ctx.tokenMeter) for the DeepSeek Harness
+- `dsh-tool-ask-user`: Model-facing ask_user_question tool over the ctx.userQuestions seam
+- `dsh-tool-bash`: Model-facing bash tool with optional generic background-job and sandbox-escalation support
+- `dsh-tool-bash-persistent`: Model-facing owner-scoped persistent Bash tool backed by the Harness PTY service
+- `dsh-tool-call-timeout-policy`: Tool-call timeout policy: a tools/execute wrapper that arms a per-tool deadline on exec.signal and returns TOOL_TIMEOUT when it wins
+- `dsh-tool-cordis`: Self-referential cordis toolset: inspect the live runtime, mount and dispose model-written plugins
+- `dsh-tool-fs`: Model-facing filesystem tools (read, write, edit) over the DeepSeek Harness filesystem seam (ctx.fs)
+- `dsh-tool-fs-search`: Model-facing filesystem discovery tools (glob, grep) backed by the packaged ripgrep binary (@vscode/ripgrep)
+- `dsh-tool-goal`: Model-facing same-session goal tools with execution-time authority checks
+- `dsh-tool-jobs`: Model-facing background job control tools (job_output, job_list, job_kill) over the ctx.jobs registry
+- `dsh-tool-pwsh`: Model-facing pwsh tool over the bash executor seam
+- `dsh-tool-pwsh-persistent`: Model-facing owner-scoped persistent PowerShell tool backed by the Harness PTY service
+- `dsh-tool-ralph`: Model-facing fresh-agent Ralph loop over the workflow and subagent seams
+- `dsh-tools`: Tool registry and execution pipeline for the DeepSeek Harness
+- `dsh-tool-skill`: Model-facing skill loading tool for the DeepSeek Harness
+- `dsh-tool-str-replace-editor`: Model-facing view, create, literal replace, and line insert tool over the Harness filesystem service
+- `dsh-tool-subagent`: Model-facing subagent delegation tool over the ctx.subagents seam
+- `dsh-tool-subagent-control`: Globally named send_message, interrupt_agent, and list_agents tools over ctx.subagents continuations
+- `dsh-tool-subagent-report`: Child-scoped report tool over ctx.subagents continuations
+- `dsh-tool-todo`: Model-facing todo_write tool over the DeepSeek Harness event-sourced session log
+- `dsh-tool-web`: Model-facing web tools (web_search, web_fetch) over the DeepSeek Harness web capability seam (ctx.web)
+- `dsh-tool-workflow`: Model-facing workflow tool: run a JavaScript orchestration script over ctx.workflowEngine
+- `dsh-typert-loader`: Loader integration for generated Typert package contributions
+- `dsh-typert-protocol`: Compiler-independent Remote metadata and Typert provider protocols
+- `dsh-typert-registry`: Runtime registry for generated package reflection and Zod schemas
+- `dsh-user-approval`: User-approval seam (ctx.approval) for the DeepSeek Harness: one-shot permission decisions dispatched to composed answerers over the approval/request waterfall, fail-closed by default
+- `dsh-user-questions`: Abstract user-questions seam (ctx.userQuestions) for asking the human during agent runs
+- `dsh-web`: Abstract web access capability seam (ctx.web) for the DeepSeek Harness 鈥?search/fetch provider registry, registration-order-independent selection, request/result vocabulary, and the WebError taxonomy
+- `dsh-web-app`: The dsh browser-surface bundle: the web patch layer over dsh-base plus the runtime glue plugin (frontend dist serving, web-surface prompt, bash runtime variables, URL line)
+- `dsh-web-frontend`: Web application entry: vite build over the @deepseek-ai/dsh-client-web shell library; dist/ served by apps/cli's dsh web
+- `dsh-web-search-deepseek`: DeepSeek-backed search provider (native web_search via the Anthropic-compatible API) for the DeepSeek Harness web capability seam (ctx.web)
+- `dsh-workflow`: Workflow capability seam: ctx.workflowEngine service, run vocabulary, and workflow/* events
+- `dsh-workflow-worker-thread`: worker-thread workflow engine: executes model-written orchestration scripts off the host event loop, bridging agent() calls back to ctx.subagents
+- `dsh-workspace`: Workspace entity registry (ctx.workspaceRegistry): durable workspace records with validated session attachment over the domain data form for the DeepSeek Harness
+- `node-addon-landlock-run`: Landlock self-restrict-then-exec launcher for sandboxing subprocesses on Linux: per-platform prebuilt static binaries plus the JS seam that resolves, probes, and speaks their CLI contract
+- `schemastery`: Type driven schema validator
+

@@ -6,9 +6,12 @@
 
 ```
 agent-learning/
-├── 00-入门笔记.md    # 总览：心智模型、ReAct 架构、防幻觉四防线、学习路径
-├── try/              # 动手练习：自己写简易 Agent（纳入本仓库 git 管理）
-└── source/           # 源码阅读：git clone 开源项目（被 .gitignore 忽略）
+├── 00-入门笔记.md          # 总览：心智模型、ReAct 架构、防幻觉四防线
+├── 00-参考-DSH包清单.md    # DSH 196 个包清单（自动生成，阶段 0 建地图用）
+├── 01-学习路径.md          # 学习路径：Agent 常识 → Cordis → DSH 插件开发（5 周）
+├── try/                    # 动手练习：自己写简易 Agent（纳入本仓库 git 管理）
+├── notes/                  # 一页纸笔记区：读每个包/项目/概念的小结
+└── source/                 # 源码阅读：git clone 开源项目（被 .gitignore 忽略）
 ```
 
 ## 嵌套 git 的处理约定
