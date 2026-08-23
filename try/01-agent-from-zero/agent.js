@@ -1,6 +1,7 @@
 // W1-D1 最小 ReAct agent（零框架，Node 18+ 原生 fetch）
 // 运行：node agent.js "现在几点？请用中文回答。"
 // 需要先设置环境变量 DEEPSEEK_API_KEY
+const readline = require('node:readline/promises')
 
 const API_KEY = process.env.DEEPSEEK_API_KEY
 if (!API_KEY) {
@@ -10,7 +11,10 @@ if (!API_KEY) {
 
 const API_URL = 'https://api.deepseek.com/chat/completions'
 const MODEL = 'deepseek-chat'
-
+const ROUND_MAX = 10
+const messages = [
+  { role: 'system', content: 'You are a helpful assistant.' },
+]
 // ── 1. 工具说明书（JSON Schema）：这是给模型看的 ──────────────
 // description 越清楚，模型用对的概率越高（扩展挑战 #2 会让你亲自验证）
 const tools = [
@@ -36,7 +40,7 @@ function runTool(name, args) {
 }
 
 // ── 3. 一次"想"：把整个对话发给模型 ─────────────────────────
-async function callLLM(messages) {
+async function callLLM() {
   const res = await fetch(API_URL, {
     method: 'POST',
     headers: {
@@ -52,12 +56,11 @@ async function callLLM(messages) {
 }
 
 // ── 4. ReAct 主循环：想 → 做 → 看 → 再想 ────────────────────
-async function run(userQuestion) {
-  const messages = [{ role: 'user', content: userQuestion }]
-
+// 同时处理工具部分的对话拼接
+async function run() {
   // 轮数上限：防止模型陷入"调用工具→报错→再调用"的无限循环
-  for (let round = 0; round < 10; round++) {
-    const msg = await callLLM(messages)
+  for (let round = 0; round < ROUND_MAX; round++) {
+    const msg = await callLLM()
     messages.push(msg) // 模型的话（可能含 tool_calls）完整放回对话
 
     if (msg.tool_calls) {
@@ -80,8 +83,28 @@ async function run(userQuestion) {
   throw new Error('达到最大轮数：模型可能陷入了循环')
 }
 
-// ── 5. 入口：默认问题演示"模型必须用工具才答得了" ────────────
-run(process.argv[2] ?? '现在几点？请用中文回答。').catch((e) => {
+// 入口，多轮对话
+async function main() {
+  const rl = readline.createInterface({ input: process.stdin, output: process.stdout })
+    console.log('开始对话（输入 exit 退出，输入 history 查看完整历史）')
+  
+    while (true) {
+      const input = await rl.question('你: ')
+      if (input.trim().toLowerCase() === 'exit') break
+      if (input.trim().toLowerCase() === 'history'){
+        messages.forEach(mes => {
+          console.log(`${mes.role}: ${mes.content}`)
+        })
+        continue
+      }
+  
+      messages.push({ role: 'user', content: input })       // ① 拼上用户的话
+      const reply = await run()                             // ② 带着全部历史问模型
+      console.log('AI: ' + reply)
+    }
+    rl.close()
+}
+main().catch(e =>{
   console.error(e)
   process.exit(1)
 })
