@@ -22,7 +22,7 @@ const tools = [
     type: 'function',
     function: {
       name: 'get_current_time',
-      description: '获取当前时间。模型不知道现在是几点几分，回答时间类问题时必须调用这个工具。',
+      description: '获取当前时间。模型不知道现在是几点几分，回答时间类问题时必须调用这个工具。该时间与用户所在地的时间一致。',
       parameters: { type: 'object', properties: {}, required: [] },
     },
   },
@@ -33,7 +33,10 @@ const tools = [
 function runTool(name, args) {
   switch (name) {
     case 'get_current_time':
-      return new Date().toISOString()
+      const now = new Date()
+      const offsetHours = -now.getTimezoneOffset() / 60 // 如中国为 +8
+      const sign = offsetHours >= 0 ? '+' : ''
+      return `${now.toLocaleString('zh-CN', { hour12: false })}（UTC${sign}${offsetHours}）`
     default:
       throw new Error(`未知工具: ${name}（模型说了个不存在的工具）`)
   }
