@@ -1,5 +1,10 @@
 # W2-D1~D3 · T3 smolagents：让 agent 用代码当动作（CodeAgent）
 
+> **⚠️ 本环节已搁置（2026-08-25）**：学习者的判断——"代码当动作"与"JSON 工具调用"
+> 并非对立，现实生产 agent（DSH/Claude Code/自己的 fork）都是**工具优先 + 代码/命令兜底**
+> 的混合形态；且自己的 fork 已有 `run_command` 万能通道 + 权限门控，已然站在正确位置。
+> 文档与源码保留，日后想精读"解释器隔离/授权 import"时再回来。
+>
 > **对应理论**：`02-Agent架构理论清单.md` #3 CodeAgent（代码即动作）——与 JSON 派的分叉点
 > **前置**：W1 全部完成（你已亲手写过：最小循环、teenycode fork 补全①~⑧，含 web_search）
 > **源码位置**：`source/smolagents/`（已通过代理抓取，HuggingFace 官方仓库）
