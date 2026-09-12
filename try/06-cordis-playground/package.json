@@ -1,0 +1,6 @@
+{
+  "name": "cordis-playground",
+  "private": true,
+  "type": "module",
+  "description": "W4 · Cordis 动手实验场（零安装：node_modules/@deepseek-ai 是指向本地 DSH vendored 包的 junction）"
+}

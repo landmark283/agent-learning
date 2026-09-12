@@ -1,0 +1,30 @@
+- id: log-console
+  name: './plugins/log-console.js'
+
+- id: greeter
+  name: './plugins/greeter.js'
+
+- id: consumer
+  name: './plugins/consumer.js'
+
+# 配置驱动：这个插件的参数全部来自 YAML，代码里没有任何默认值之外的硬编码
+- id: echo
+  name: './plugins/echo.js'
+  config:
+    message: '配置来自 cordis.yml，而不是插件代码'
+    times: 2
+
+# ── 以下四行把实验推进到「真实 DSH 服务」────────────────────────────
+# tools 服务需要一个 systemPrompt 提供方（工具要向系统提示词贡献 schema），
+# 所以这两个包必须一起出现；少一个，后面的工具插件会永远停在 PENDING。
+- id: system-prompt
+  name: '@deepseek-ai/dsh-system-prompt'
+
+- id: tools
+  name: '@deepseek-ai/dsh-tools'
+
+- id: tool-logger
+  name: './plugins/tool-logger.js'
+
+- id: greet-tool
+  name: './plugins/greet-tool.js'
